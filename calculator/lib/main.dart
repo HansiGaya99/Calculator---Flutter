@@ -72,9 +72,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(0.0),
                               side: BorderSide(
-                                  color: Colors.white,
-                                  width: 1,
-                                  style: BorderStyle.solid),
+                                  width: 1, style: BorderStyle.solid),
                             ),
                             padding: EdgeInsets.all(16.0),
                             onPressed: null,
