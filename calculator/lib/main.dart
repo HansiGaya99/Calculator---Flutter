@@ -28,7 +28,7 @@ class SimpleCalculator extends StatefulWidget {
 class _SimpleCalculatorState extends State<SimpleCalculator> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
         
     ));
   }
