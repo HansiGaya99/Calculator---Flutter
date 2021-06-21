@@ -83,7 +83,6 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                               style: TextStyle(
                                 fontSize: 30.0,
                                 fontWeight: FontWeight.normal,
-                                color: Colors.white,
                               ),
                             ),
                           ),
