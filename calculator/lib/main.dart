@@ -13,7 +13,7 @@ class Calculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Simple caculator",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
       home: SimpleCalculator(),
     );
   }
@@ -82,12 +82,13 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
   Widget buildButton(
       String buttonText, double buttonHeight, Color buttonColor) {
     return Container(
+      margin: EdgeInsets.all(5.0),
       height: MediaQuery.of(context).size.height * 0.1 * buttonHeight,
       color: buttonColor,
       // ignore: deprecated_member_use
       child: FlatButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(0.0),
+          borderRadius: BorderRadius.circular(5.0),
           side: BorderSide(
               color: Colors.white, width: 1, style: BorderStyle.solid),
         ),
@@ -138,7 +139,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                   children: [
                     TableRow(
                       children: [
-                        buildButton("C", 1, Colors.redAccent),
+                        buildButton("C", 1, Colors.blueGrey),
                         buildButton("Clear", 1, Colors.blue),
                         buildButton("/", 1, Colors.blue),
                       ],
@@ -195,7 +196,7 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                     ),
                     TableRow(
                       children: [
-                        buildButton("=", 2, Colors.redAccent),
+                        buildButton("=", 2.1, Colors.redAccent),
                       ],
                     ),
                   ],
