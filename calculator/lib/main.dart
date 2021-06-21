@@ -30,6 +30,31 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
 
   get child => null;
 
+  Widget buildButton(
+      String buttonText, double buttonHeight, Color buttonColor) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.1 * buttonHeight,
+      color: buttonColor,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(0.0),
+          side: BorderSide(
+              color: Colors.white, width: 1, style: BorderStyle.solid),
+        ),
+        padding: EdgeInsets.all(16.0),
+        onPressed: null,
+        child: Text(
+          buttonText,
+          style: TextStyle(
+              fontSize: 30.0,
+              fontWeight: FontWeight.normal,
+              color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,29 +89,37 @@ class _SimpleCalculatorState extends State<SimpleCalculator> {
                   children: [
                     TableRow(
                       children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          color: Colors.redAccent,
-                          // ignore: deprecated_member_use
-                          child: FlatButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0.0),
-                              side: BorderSide(
-                                  color: Colors.white,
-                                  width: 1,
-                                  style: BorderStyle.solid),
-                            ),
-                            padding: EdgeInsets.all(16.0),
-                            onPressed: null,
-                            child: Text(
-                              "C",
-                              style: TextStyle(
-                                  fontSize: 30.0,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.white),
-                            ),
-                          ),
-                        ),
+                        buildButton("C", 1, Colors.redAccent),
+                        buildButton("Back", 1, Colors.blue),
+                        buildButton("/", 1, Colors.blue),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        buildButton("7", 1, Colors.black45),
+                        buildButton("8", 1, Colors.black45),
+                        buildButton("9", 1, Colors.black45),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        buildButton("4", 1, Colors.black45),
+                        buildButton("5", 1, Colors.black45),
+                        buildButton("6", 1, Colors.black45),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        buildButton("1", 1, Colors.black45),
+                        buildButton("2", 1, Colors.black45),
+                        buildButton("3", 1, Colors.black45),
+                      ],
+                    ),
+                    TableRow(
+                      children: [
+                        buildButton(".", 1, Colors.black45),
+                        buildButton("0", 1, Colors.black45),
+                        buildButton("00", 1, Colors.black45),
                       ],
                     ),
                   ],
